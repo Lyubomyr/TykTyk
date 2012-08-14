@@ -1,0 +1,12 @@
+# Typus Roles Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+admin:
+  Collection: create, read, update, delete
+  Company: create, read, update, delete
+  Door: create, read, update, delete, get_collections
+  Article: create, read, update, delete
+  Paper: create, read, update, delete
+  About: read, update
+  Contact: read, update

@@ -1,0 +1,13 @@
+
+<li>
+  <label>Компания:</label>
+  <select id="comp_id" name="company" style="width:200px" onchange="<%= remote_function(:url => { :action => :get_collections}, :with => 'Form.Element.serialize(this)') %>">
+    <%=options_for_select(Company.all.map {|n| [n.name, n.id]}, :selected => @item.collection.blank? ? nil : @item.collection.company.id)%>
+  </select>
+</li>
+<li>
+  <div id="company">
+    <%= render :partial => "company", :object => @item.collection.blank? ? nil : @item.collection.company %>
+  </div>
+</li>
+

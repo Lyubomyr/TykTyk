@@ -1,0 +1,14 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h3><%= @door.name %></h3><br/>
+<%= image_tag(@door.photo_file_name) %><br/>
+<%= @door.description %><br/>
+<%#
+<%= link_to_remote_redbox("Заказать",  :url => {:controller=>'store_controller', :action=>'send_letter', :id => params[:id]}) %>
+<p><span id="door_link_<%= @door.id %>" class="popup_link">Заказать</span></p>
+
+<%= render :partial => 'mailform_popup' %>
+<%= render :partial => "side"%>

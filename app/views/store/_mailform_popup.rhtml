@@ -1,0 +1,90 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<div id="door_popup_<%= @door.id %>" class="popup popup_draghandle" style="display:none">
+  <%form_tag({:controller => "store", :action => "send_letter"}, :method => "get") do %>
+   <table>
+    <tr>
+      <td>
+        <label><b>Производитель:</b></label><br/>
+        <%=h @company.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label><b>Модель:</b></label><br/>
+        <%=h @door.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td>
+               <label><b>Размер:</b></label><br/>
+               <%=select_tag "size", options_for_select([["Выберите размер",0], ["2000x800",1], ["2000x700",2], ["2000x600",3], ["more...",4] ]), :onchange => "if (this.options[this.selectedIndex].value == '4')
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                   $('width').disabled = false;
+                                                                                                                                                                                                                   $('height').disabled = false;
+                                                                                                                                                                                                                   }
+                                                                                                                                                                 else
+                                                                                                                                                                                                                   {
+                                                                                                                                                                                                                    $('width').disabled = true;
+                                                                                                                                                                                                                    $('height').disabled = true;} " %>
+            </td>
+            <td>
+              <label><b>Ширина:</b></label><br/>
+              <%= text_field_tag :width, '', :size => 7, :disabled => :true %>
+            </td>
+            <td>
+              <label><b>Высота:</b></label><br/>
+              <%= text_field_tag :height, '', :size => 7, :disabled => :true %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label><b>Количество:</b></label><br/>
+        <%= text_field_tag :count, '', :size => 10 %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label><b>Ваше имя:</b></label><br/>
+        <%= text_field_tag :nameclient, '', :size => 50 %>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <label><b>Адрес:</b></label><br/>
+        <%= text_field_tag :address, '', :size => 50%>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <label><b>Телефон:</b></label><br/>
+        <%= text_field_tag :phone, '', :size => 50%>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <label><b>Комментарии:</b></label><br/>
+        <%= text_area_tag :comments, '', :rows => 6, :cols => 38%>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= submit_tag '', :id => 'sendButton', :class => 'popup_closebox'%>
+      </td>
+      <td>
+        <%= tag :input, :type => 'button', :id => 'closeButton', :value => '', :class => 'popup_closebox' %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+</div>
+<%= javascript_tag "new Popup('door_popup_#{@door.id}','door_link_#{@door.id}', {trigger:'click', position:'50,100'})" %>

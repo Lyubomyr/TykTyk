@@ -1,0 +1,12 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% content_for(:sidebar) do %>
+<ul>
+  <%  for collection in @collections -%>
+      <li class="underline"><%= link_to  collection.name, :action => 'finddoorbycollection', :id => collection.id%></li>
+      <br/>
+ <%  end %>
+</ul>
+<% end %>

@@ -1,0 +1,61 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Collection:
+  fields:
+    list: name, company
+    form: company, name
+  relationships: company, doors
+  application: Панель администрирования продукции
+  description: Администрирование колекций
+
+Company:
+  fields:
+    list: name
+    form: name
+  relationships: collections
+  application: Панель администрирования продукции
+  description: Администрирование компаний
+
+DictDoorType:
+  relationships: doors
+
+Door:
+  fields:
+    list: name, collection, dict_door_type
+    form: collection_id, dict_door_type, name, description, photo
+    options:
+      templates:
+        collection_id: new
+  relationships: dict_door_type
+  application: Панель администрирования продукции
+  description: Администрирование дверей
+
+Article:
+  fields:
+    list: title, added_date, short_description
+    form: added_date, title, short_description, description
+  application: Панель администрирования новостей
+  description: Администрирование новостей
+
+Paper:
+  fields:
+    list: title, added_date, short_description, author
+    form: added_date, title, author, short_description, description
+  application: Панель администрирования статей
+  description: Администрирование статей
+
+About:
+  fields:
+    list: description
+    form: description
+  application: Панель администрирования О нас
+  description: Администрирование О нас
+
+Contact:
+  fields:
+    list: description
+    form: description
+  application: Панель администрирования контактов
+  description: Администрирование контактов

@@ -1,0 +1,10 @@
+<label>Колекция:</label>
+<%=
+select_tag "door[collection_id]",
+  if company
+  options_from_collection_for_select(company.collections, :id, :name)
+else
+  options_from_collection_for_select(Collection.find(:all,:conditions=>["company_id=?", Company.find(:first).id]),:id,:name)
+end,
+  :multiple => false, :class => 'select_door'
+%>

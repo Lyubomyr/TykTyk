@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>TukTuk Store</title>
+    <%= stylesheet_link_tag :all, :media => "all" %>
+    <%= stylesheet_link_tag 'redbox' %>
+    <%= stylesheet_link_tag 'popup.css' %>
+    <%= javascript_include_tag "dropdown.js" %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'redbox' %>
+    <%= javascript_include_tag 'popup.js' %>
+  </head>
+  <body id="store">
+    <div id="sitesize">
+      <div id="header">
+        <%#*<img id="door" src ="/images/doorw.jpg" alt="Door"/>%>
+        <%#*<img id="logo" src ="/images/Logo.png" alt="Logo"/>%>
+        <div id="menu">
+          <div id="podmenu">
+
+            <div class="floatleft">
+              <%link_to(:action => :index) do %><div class="ddheader" id="one-ddheader" onmouseover="ddMenu('one',1)" onmouseout="ddMenu('one',-1)">Главная</div><%end%>
+            </div>
+
+            <div class="floatleft">
+              <div class="ddheader" id="two-ddheader" onmouseover="ddMenu('two',1)" onmouseout="ddMenu('two',-1)">Каталог</div>
+              <div class="ddcontent" id="two-ddcontent" onmouseover="cancelHide('two')" onmouseout="ddMenu('two',-1)">
+                <div class="ddinner">
+                  <ul>
+                    <% @companies = Company.find(:all) %>
+                    <%  for company in @companies -%>
+                         <li class="underline"><%= link_to  company.name, :action => 'side', :id => company.id%></li>
+                    <%  end %>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="floatleft">
+             <%link_to(:action => :all_news) do %> <div class="ddheader" id="tree-ddheader" onmouseover="ddMenu('tree',1)" onmouseout="ddMenu('tree',-1)">Новости</div><%end%>
+            </div>
+
+            <div class="floatleft">
+              <div class="ddheader" id="four-ddheader" onmouseover="ddMenu('four',1)" onmouseout="ddMenu('four',-1)">Статьи</div>
+              <div class="ddcontent" id="four-ddcontent" onmouseover="cancelHide('four')" onmouseout="ddMenu('four',-1)">
+                <div class="ddinner">
+                  <ul>
+                    <% @papers = Paper.find(:all) %>
+                    <%  for paper in @papers -%>
+                         <li class="underline"><%= link_to  paper.title, :action => 'paper', :id => paper.id%></li>
+                    <%  end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="floatleft">
+              <%link_to(:action => :about_us)do %><div class="ddheader" id="five-ddheader" onmouseover="ddMenu('five',1)" onmouseout="ddMenu('five',-1)">О Нас</div><%end%>
+            </div>
+
+            <div class="floatleft">
+              <%link_to(:action => :contact_us) do %><div class="ddheader" id="six-ddheader" onmouseover="ddMenu('six',1)" onmouseout="ddMenu('six',-1)">Контакты</div><%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content">
+       <div id="sidein">
+        <div id="side">  
+          <div id="sideout">
+            <%= yield :sidebar %> 
+          </div>
+        </div>
+       </div>
+       <div id="mainin">
+        <div id="main">
+          <div id="mainout">
+            <%if flash[:notice]-%>
+              <div id="notice"><%=flash[:notice]%></div>
+            <%end-%>
+             <%= yield :layout %>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="footer">
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h3><%= @paper.title %></h3><br/>
+<div>
+  <%= @paper.description %><br/>
+</div>
+Автор: <%= @paper.author %><br/><br/>
+Добавлено <%= @paper.added_date %>
+<%= render :partial => "side_news"%>

@@ -1,0 +1,15 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+
+   <%  for new in @news -%>
+    <div><%= link_to  new.title, :action => 'news', :id => new.id%></div>
+    <div><%= h(truncate(new.description.gsub(/(<[^>]+>)/, ''), 150)) %><%= link_to 'читать дальше', :action => 'news', :id => new.id %></div>
+    <br />
+    <br />
+    <br />
+   <%  end %>
+   <%= render :partial => "side_news"%>
+

@@ -1,0 +1,252 @@
+/* 
+    Document   : TukTuk
+    Created on : 29 вер 2010, 0:44:10
+    Author     : USER
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+
+#store
+{
+    margin:0;
+    padding:0;
+    border: none;
+    min-height:1054px;
+    height:auto;
+    background-image:url(../images/6.jpg);
+
+}
+
+
+#sitesize
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    height:auto;
+    min-height:1054px;
+    width: 1024px;
+    margin:0px auto;
+    background-color: white;
+
+}
+
+#header
+{
+    position:relative;
+    width: 1024px;
+    height: 295px;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+    background-image:url(../images/design/header.jpg);
+    background-repeat: repeat-x;
+}
+
+#door
+{
+    margin-left:10px;
+}
+
+#logo
+{
+    position:absolute;
+    margin:60px 0px;
+}
+
+/*--------------- MENU--------------*/
+
+#podmenu
+{
+    position:relative;
+    padding-left:52px;
+    padding-top:6px;
+}
+
+#menu
+{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    width:750px;
+    height:50px;
+    background-repeat:no-repeat;
+    background-image:url(../images/design/menu1.png);
+}
+
+/*ul
+{
+    margin-top:15px;
+    padding:0;
+}
+ul li
+{
+    display:inline;
+    list-style:none;
+    padding:0 25px;
+}
+
+ul li a
+{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+}*/
+/*-------------------------------------------*/
+
+#content
+{
+    float: left;
+    width:1024px;
+    min-height:854px;
+    height:auto;
+    background-color:#ADADAD;
+    background-image:url(../images/design/sideR.png);
+}
+
+#sidein
+{
+    background-image:url(../images/design/sideR.png);
+    float: left;
+    left:200px;
+    width:283px;
+    min-height:834px;
+    height:inherit;
+}
+
+#side
+{
+   background-image:url(../images/design/side.jpg);
+   padding:15px 5px 0px 20px;
+   width:258px;
+   height:834px;
+}
+
+#sideout
+{
+    padding:10px 15px;
+}
+
+#side div{
+    width:200px;
+    height:auto;
+}
+
+#closeButton{
+    background:url(../images/design/No.png);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#sendButton{
+    background:url(../images/design/Yes.png);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#mainin
+{
+    float: left;
+    right:200px;
+    width:740px;
+    min-height:854px;
+    height:auto;
+    background-image: url(../images/design/mainR.png);
+}
+
+#main
+{
+    background-image: url(../images/design/main.jpg);
+    background-repeat: no-repeat;
+    min-height:854px;
+    height:auto;
+}
+
+#mainout
+{
+    padding:10px 15px;
+    height:100%;
+}
+
+#price, cart
+{
+    float:left;
+
+}
+
+#footer
+{
+    float:left;
+    width:1024px;
+    height:50px;
+    background-image:url(../images/design/footer.png);
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+
+#notice
+{
+     font:bold  small sans-serif;
+     border: 4px solid red;
+}
+
+/*--------------------ADMIN PART DO NOT ENTRY-------------------------*/
+#admincontent
+{
+    padding:10px 15px;
+}
+
+#contentadmin
+{
+    position:relative;
+    width:1024px;
+    min-height:854px;
+    height:auto;
+   /* background-color:white; */
+}
+
+
+#side a:link {
+ color: blue;
+ font-weight: bold;
+ text-decoration: none;
+ }
+#side a:visited {
+ color: darkblue;
+ font-weight: bold;
+ text-decoration: none;
+ }
+
+#side a:hover {
+ color: darkslateblue;
+ font-weight: bold;
+ text-decoration: none;
+ }
+
+#menu a:link {
+ text-decoration: none;
+ }
+#menu a:visited {
+ color: darkblue;
+ text-decoration: none;
+ }
+
+#menu a:hover {
+ color: darkslateblue;
+ text-decoration: none;
+ }
+ img
+ {
+     border:none;
+ }

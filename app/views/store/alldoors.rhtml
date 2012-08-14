@@ -1,0 +1,35 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<% count = 0 %>
+<table style="margin: 0 auto" cellpadding="20px">
+  <tr>
+<%  for door in @door -%>
+    <% count = count + 1 %>
+    <% if count == 3 then %>
+       <% count = 0 %>
+       <td>
+          <h3><%= door.name %></h3>
+          <%= link_to image_tag(door.photo_file_name), :action => :description, :id => door.id   %><br/>
+          <%= button_to "Подробно", :action => :description, :id => door.id %>
+       </td></tr><tr>
+    <% else %>
+      <td>
+          <h3><%= door.name %></h3>
+          <%= link_to image_tag(door.photo_file_name), :action => :description, :id => door.id   %><br/>
+          <%= button_to "Подробно", :action => :description, :id => door.id %>
+      </td>
+    <% end %>   
+<%  end %>
+</table>
+<%=  if @pages.current.previous
+       link_to("Previous page", { :page => @pages.current.previous })
+     end
+%>
+
+<%= if @pages.current.next
+      link_to("Next page", { :page => @pages.current.next })
+    end
+%>
+<%= render :partial => "side"%>
